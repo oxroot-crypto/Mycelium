@@ -1,0 +1,51 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/packages/cspell-types/cspell.schema.json",
+  "version": "0.2",
+  "language": "en",
+  "caseSensitive": false,
+  "useGitignore": true,
+  "dictionaries": ["typescript", "node", "npm", "en-gb", "softwareTerms"],
+  "words": [
+    "mycelium",
+    "oxroot",
+    "eslint",
+    "lefthook",
+    "knip",
+    "syncpack",
+    "tsbuildinfo",
+    "vitest",
+    "changesets",
+    "chainable",
+    "commitlint",
+    "codegen",
+    "dedupe",
+    "deduped",
+    "monorepo",
+    "pnpm",
+    "postinstall",
+    "noreply",
+    "anthropic",
+    "web-fiction",
+    "nsexypig",
+    "oxlint",
+    "Pantser",
+    "frontmatter",
+    "hjkl"
+  ],
+  "ignorePaths": [
+    "node_modules",
+    "dist",
+    "coverage",
+    "*.tsbuildinfo",
+    "pnpm-lock.yaml",
+    ".git",
+    ".changeset",
+    ".claude"
+  ],
+  "overrides": [
+    {
+      "filename": "**/*.ts",
+      "languageId": "typescript"
+    }
+  ]
+}

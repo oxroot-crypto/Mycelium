@@ -1,0 +1,36 @@
+{
+  "name": "@mycelium/knowledge",
+  "version": "1.0.0",
+  "description": "Mycelium RAG 知识库 — 长期记忆系统，混合检索（BM25 + 向量）、实体存储、分层摘要",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "development": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc && tsc-alias",
+    "typecheck": "tsc --noEmit",
+    "dev": "tsx --watch src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "clean": "rimraf dist tsconfig.tsbuildinfo"
+  },
+  "dependencies": {
+    "@mycelium/core": "workspace:*",
+    "@mycelium/llm": "workspace:*"
+  },
+  "author": "oxroot <oxrootnsexypig@gmail.com> (https://github.com/oxroot-crypto)",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ]
+}

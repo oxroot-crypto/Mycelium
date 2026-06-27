@@ -1,0 +1,23 @@
+# ============================================================================
+# EditorConfig — 跨编辑器的代码风格约定
+# VS Code / IntelliJ / Neovim 等主流编辑器原生支持
+# 详见: https://editorconfig.org/
+# ============================================================================
+
+root = true
+
+[*]
+indent_style                = space        # 空格缩进
+indent_size                 = 2            # 缩进宽度
+end_of_line                 = lf           # 统一 Unix 换行符
+charset                     = utf-8        # 编码
+trim_trailing_whitespace    = true         # 去除行尾空格
+insert_final_newline        = true         # 文件末尾保留空行
+
+# Markdown 文件不修剪行尾空格（可能是有意的换行）
+[*.md]
+trim_trailing_whitespace    = false
+
+# YAML 同样使用 2 空格缩进
+[*.{yml,yaml}]
+indent_size                 = 2

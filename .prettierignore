@@ -1,0 +1,26 @@
+# ============================================================================
+# Prettier 忽略规则 — 这些文件不会被格式化
+# 支持 .gitignore 语法
+# ============================================================================
+
+# ---- Dependencies ----
+node_modules/
+.pnpm-store/
+
+# ---- Build artifacts ----
+dist/
+*.tsbuildinfo
+
+# ---- Coverage reports ----
+coverage/
+
+# ---- knip ----
+.cache/
+.knip/
+
+# ---- Secrets（不应被格式检查触及） ----
+.env
+.env.*
+
+# ---- VCS ----
+.git/

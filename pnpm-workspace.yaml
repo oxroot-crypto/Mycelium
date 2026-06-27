@@ -1,0 +1,17 @@
+# ============================================================================
+# pnpm Workspace 配置
+# 声明 monorepo 中包含的子包路径，支持 glob 模式
+# ============================================================================
+
+packages:
+  # CLI 入口包（npm 发布为 mycelium）
+  - 'main'
+  # 所有 scoped 子包（@mycelium/core 等）
+  - 'packages/*'
+allowBuilds:
+  esbuild: true
+  lefthook: true
+catalog:
+  '@types/node': ^26.0.1
+overrides:
+  '@types/node': 'catalog:'

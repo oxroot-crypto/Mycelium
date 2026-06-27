@@ -1,0 +1,39 @@
+# ============================================================================
+# Lefthook — 轻量级 Git Hooks 管理器
+# 详见: https://github.com/evilmartians/lefthook
+#
+# 首次 clone 后执行 pnpm prepare 自动安装 hooks
+# ============================================================================
+
+pre-commit:
+  parallel: true
+  commands:
+    # ---- 代码检查 ----
+    lint:
+      glob: '*.{ts,tsx,js,jsx,mjs,cjs}'
+      run: pnpm lint {staged_files}
+      stage_fixed: true
+
+    # ---- 格式检查 ----
+    format:
+      glob: '*.{ts,tsx,js,jsx,mjs,cjs,json,md,yaml,yml}'
+      run: pnpm format:check {staged_files}
+
+    # ---- 拼写检查 ----
+    spellcheck:
+      glob: '*.{ts,tsx,js,jsx,mjs,cjs,json,md,yaml,yml}'
+      run: pnpm spellcheck --no-must-find-files {staged_files}
+
+# 提交信息校验（commitlint 配置文件为 commitlint.config.mjs）
+commit-msg:
+  commands:
+    commitlint:
+      run: pnpm exec commitlint --edit {1}
+
+# 推送前跑完整类型检查 + 测试（可取消，不会阻塞 push）
+pre-push:
+  commands:
+    typecheck:
+      run: pnpm typecheck
+    test:
+      run: pnpm test

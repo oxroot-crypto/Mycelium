@@ -1,0 +1,42 @@
+{
+  "$schema": "https://unpkg.com/syncpack@15.3.2/dist/schema.json",
+
+  "source": ["package.json", "packages/*/package.json", "main/package.json"],
+
+  "versionGroups": [
+    {
+      "label": "所有 workspace 包的 TypeScript 版本必须一致（peerDeps 除外）",
+      "dependencies": ["typescript"],
+      "dependencyTypes": ["dev"],
+      "packages": ["**"]
+    },
+    {
+      "label": "所有 workspace 包的 Vitest 版本必须一致",
+      "dependencies": ["vitest", "@vitest/**"],
+      "dependencyTypes": ["dev"],
+      "packages": ["**"]
+    }
+  ],
+
+  "semverRange": "^",
+
+  "sortAz": ["dependencies", "devDependencies", "peerDependencies", "scripts"],
+
+  "sortFirst": [
+    "name",
+    "version",
+    "private",
+    "description",
+    "type",
+    "main",
+    "bin",
+    "types",
+    "exports",
+    "scripts",
+    "engines",
+    "packageManager",
+    "dependencies",
+    "devDependencies",
+    "peerDependencies"
+  ]
+}

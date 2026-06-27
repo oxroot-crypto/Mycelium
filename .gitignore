@@ -1,0 +1,48 @@
+# ============================================================================
+# Git 忽略规则
+# ============================================================================
+
+# ---- Dependencies ----
+node_modules/
+.pnpm-store/
+
+# ---- TypeScript 编译产物 ----
+dist/
+*.tsbuildinfo
+
+# ---- Environment & Secrets ----
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# ---- IDE ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ---- OS ----
+.DS_Store        # macOS
+Thumbs.db        # Windows
+
+# ---- Logs ----
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# ---- 测试覆盖率 ----
+coverage/
+docs/api/
+
+# ---- knip 缓存 ----
+.cache/
+.knip/
+
+# ---- 临时文件 ----
+.tmp
+.temp
+tmp/
+temp/

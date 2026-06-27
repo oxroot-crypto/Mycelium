@@ -1,0 +1,15 @@
+{
+  /* ========================================================================
+   * main 包 TypeScript 配置
+   * 继承根目录 tsconfig.base.json，仅声明路径映射
+   * ======================================================================== */
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    // 源码根目录（相对于此文件）
+    "rootDir": "src",
+    // 编译输出目录
+    "outDir": "dist"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

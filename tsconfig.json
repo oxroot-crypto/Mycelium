@@ -1,0 +1,30 @@
+{
+  // ========================================================================
+  // TypeScript 项目引用根配置
+  //
+  // tsc -b（--build）按依赖拓扑顺序编译:
+  //   1. packages/core（零依赖）
+  //   2. packages/llm, packages/project, packages/outline（依赖 core）
+  //   3. packages/knowledge（依赖 core, llm）
+  //   4. packages/writer, packages/review（依赖 core, llm, knowledge, outline）
+  //   5. packages/orchestrator（依赖所有包）
+  //   6. packages/tui（依赖 core, orchestrator）
+  //   7. main（依赖 orchestrator, tui）
+  //
+  // 增量编译: 编译产物缓存在 .tsbuildinfo 中，未修改的包秒级跳过。
+  // 注意: TypeScript project references 不支持 glob，新增 packages 需手动添加到 references。
+  // ========================================================================
+  "files": [],
+  "references": [
+    { "path": "packages/core" },
+    { "path": "packages/llm" },
+    { "path": "packages/project" },
+    { "path": "packages/outline" },
+    { "path": "packages/knowledge" },
+    { "path": "packages/writer" },
+    { "path": "packages/review" },
+    { "path": "packages/orchestrator" },
+    { "path": "packages/tui" },
+    { "path": "main" }
+  ]
+}

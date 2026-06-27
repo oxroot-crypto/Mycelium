@@ -1,0 +1,76 @@
+{
+  "name": "mycelium",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mycelium — AI 智能体网文创作平台",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -b && pnpm -r exec tsc-alias",
+    "dev": "tsc -b --watch",
+    "typecheck": "tsc -b --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "spellcheck": "cspell lint . --relative --no-progress",
+    "docs": "typedoc",
+    "knip": "knip",
+    "syncpack": "syncpack list-mismatches",
+    "syncpack:fix": "syncpack fix-mismatches",
+    "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm spellcheck && pnpm knip && pnpm test",
+    "clean": "pnpm -r run clean",
+    "prepare": "lefthook install"
+  },
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=11.0.0"
+  },
+  "packageManager": "pnpm@11.9.0",
+  "keywords": [
+    "mycelium",
+    "ai",
+    "agent",
+    "novel",
+    "web-fiction",
+    "creative-writing",
+    "monorepo"
+  ],
+  "author": "oxroot <oxrootnsexypig@gmail.com> (https://github.com/oxroot-crypto)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oxroot-crypto/mycelium"
+  },
+  "bugs": {
+    "url": "https://github.com/oxroot-crypto/mycelium/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.31.0",
+    "@commitlint/cli": "^21.1.0",
+    "@commitlint/config-conventional": "^21.1.0",
+    "@eslint/js": "^9.39.4",
+    "@types/node": "catalog:",
+    "@vitest/coverage-v8": "^4.1.9",
+    "cspell": "^10.0.1",
+    "eslint": "^9.39.4",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsdoc": "^63.0.9",
+    "eslint-plugin-unicorn": "^65.0.1",
+    "knip": "^6.21.0",
+    "lefthook": "^2.1.9",
+    "prettier": "^3.8.4",
+    "rimraf": "^6.1.3",
+    "syncpack": "^15.3.2",
+    "tsc-alias": "^1.8.17",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.62.0",
+    "vitest": "^4.1.9"
+  }
+}
